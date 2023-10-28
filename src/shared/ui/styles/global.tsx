@@ -27,6 +27,7 @@ export const GlobalStyles = () => {
 
                     html {
                         margin-right: calc(-1 * (100vw - 100%));
+                        overflow-x: hidden;
                     }
 
                     a {

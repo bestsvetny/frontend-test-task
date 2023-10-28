@@ -22,8 +22,7 @@ export const Modal = ({ children, setActive, active }: ModalProps) => {
             <Global
                 styles={css`
                     html {
-                        overflow: ${active ? 'hidden' : 'scroll'};
-                        overflow-x: hidden;
+                        overflow-y: ${active ? 'hidden' : 'scroll'};
                     }
                 `}
             />
