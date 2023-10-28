@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
-import photo_lg from 'src/shared/assets/photo_lg.png';
-import { Box, Card, Category, Container } from 'src/shared/ui';
+import photo_lg from 'src/shared/assets/photo_lg.jpg';
+import { Box, Card, Category, Container, mediaQueries } from 'src/shared/ui';
 import { useMediaQuery } from 'src/shared/hooks';
 import { matchMediaQueries } from 'src/shared/ui/styles/media-queries.ts';
 
@@ -12,15 +12,27 @@ export const UserEditMenu = () => {
                 <Box
                     css={css`
                         display: block;
-                        position: relative;
-                        border-radius: 8px;
                         width: 100%;
-                        height: ${isDesktop ? '485px' : '187px'};
-                        background-image: url(${photo_lg});
-                        background-size: cover;
-                        background-position: center;
+                        ${mediaQueries.mobile} {
+                            height: 187px;
+                        }
                     `}
-                ></Box>
+                >
+                    <img
+                        css={css`
+                            display: block;
+                            width: 100%;
+                            border-radius: 8px;
+                            object-fit: cover;
+                            ${mediaQueries.mobile} {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        `}
+                        alt='photo of person'
+                        src={photo_lg}
+                    />
+                </Box>
                 <Container column gap='24px' justifyContent='space-between' width='100%'>
                     <Category href={'#'} text='Данные профиля' isActive />
                     <Category href={'#'} text='Рабочее пространство' />

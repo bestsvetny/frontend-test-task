@@ -1,6 +1,6 @@
 import { Box, CaptionText, Card, Colors, Container, Headline, Text } from 'src/shared/ui';
 import { css } from '@emotion/react';
-import photo_md from 'src/shared/assets/photo_md.png';
+import photo_md from 'src/shared/assets/photo_md.jpg';
 import { useMediaQuery } from 'src/shared/hooks';
 import { matchMediaQueries, mediaQueries } from 'src/shared/ui/styles/media-queries.ts';
 import { IExtendedUser } from 'src/widgets/user-list/model/users-slice.ts';
@@ -34,20 +34,36 @@ export const UserItem = React.memo(function UserItem({ user }: ContainerProps) {
                     }
                 `}
             >
-                <img
+                <Box
                     css={css`
                         display: block;
                         width: 112px;
                         height: 120px;
-                        border-radius: 8px;
-                        filter: ${!user.isActive ? 'grayscale(100%)' : 'none'};
                         ${mediaQueries.mobile} {
-                            width: 130px;
+                            min-width: 130px;
+                            width: 100%;
                         }
                     `}
-                    alt='photo of person'
-                    src={photo_md}
-                />
+                >
+                    <img
+                        css={css`
+                            display: block;
+                            width: 112px;
+                            height: 120px;
+                            border-radius: 8px;
+                            filter: ${!user.isActive ? 'grayscale(100%)' : 'none'};
+                            object-fit: cover;
+                            ${mediaQueries.mobile} {
+                                min-width: 130px;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        `}
+                        alt='photo of person'
+                        src={photo_md}
+                    />
+                </Box>
+
                 <Container
                     column
                     justifyContent='space-between'

@@ -1,5 +1,17 @@
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { Box, Button, Card, Divider, Form, TextInput, Modal, Title, Loader, ErrorMessage } from 'src/shared/ui';
+import {
+    Box,
+    Button,
+    Card,
+    Divider,
+    Form,
+    TextInput,
+    Modal,
+    Title,
+    Loader,
+    ErrorMessage,
+    mediaQueries
+} from 'src/shared/ui';
 import { useMediaQuery } from 'src/shared/hooks';
 import { matchMediaQueries } from 'src/shared/ui/styles/media-queries.ts';
 import { css } from '@emotion/react';
@@ -62,7 +74,9 @@ export const UserEditForm = () => {
                     <>
                         <Box
                             css={css`
-                                max-width: 420px;
+                                ${mediaQueries.desktop} {
+                                    max-width: 420px;
+                                }
                             `}
                         >
                             <Form id='edit-form' onSubmit={handleSubmit(onSubmit)}>

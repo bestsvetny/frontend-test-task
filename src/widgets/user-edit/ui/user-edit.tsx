@@ -8,7 +8,7 @@ export const UserEdit = () => {
     const isDesktop = useMediaQuery(matchMediaQueries.desktop);
     return (
         <Container column>
-            <Grid gridTemplateColumns={isDesktop ? '1fr 2.5fr' : '1fr'} gap='32px 40px'>
+            <Grid gridTemplateColumns={isDesktop ? '360px 760px' : '1fr'} gap='32px 40px'>
                 <UserEditMenu />
                 <UserEditForm />
             </Grid>

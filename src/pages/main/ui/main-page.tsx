@@ -16,7 +16,6 @@ export const MainPage = () => {
                         padding: '40px 0 40px 0'
                     },
                     [mediaQueries.mobile]: {
-                        maxWidth: '343px',
                         padding: '32px 0 32px 0'
                     }
                 })}

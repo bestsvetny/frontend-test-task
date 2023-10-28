@@ -15,7 +15,6 @@ export const UserEditPage = () => {
                 paddingBottom: '40px',
                 [mediaQueries.mobile]: {
                     gap: '20px',
-                    maxWidth: '343px',
                     paddingBottom: '20px'
                 }
             })}
