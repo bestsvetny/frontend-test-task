@@ -1,4 +1,4 @@
-import { Dropdown } from 'src/shared/ui/components/dropdown.tsx';
+import { Dropdown } from 'src/shared/ui';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from 'src/app/appStore.ts';
 import { userActiveToggled, userHiddenToggled } from 'src/widgets/user-list/model/users-slice.ts';

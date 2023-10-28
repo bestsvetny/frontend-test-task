@@ -18,8 +18,8 @@ import { css } from '@emotion/react';
 import { FormItem } from 'src/shared/ui/components/form.tsx';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { UserEditSuccessMessage } from 'src/widgets/user-edit/ui/user-edit-success-message.tsx';
-import { IFormInput } from 'src/widgets/user-list/types/types.tsx';
+import { UserEditSuccessMessage } from './user-edit-success-message.tsx';
+import { IFormInput } from '../types/types.tsx';
 import { useGetUser } from 'src/widgets/user-edit/api/queries.ts';
 
 export const UserEditForm = () => {

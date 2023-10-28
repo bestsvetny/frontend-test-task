@@ -8,6 +8,7 @@ export { Title, Text, CaptionText, Headline } from './components/typography.tsx'
 export { Card } from './components/card.tsx';
 export { Box, Container, Grid } from './components/layout.tsx';
 export { Divider } from './components/divider.tsx';
+export { Dropdown } from './components/dropdown.tsx';
 export { Category } from './components/category.tsx';
 export { Modal } from './components/modal.tsx';
 export { Loader } from './components/loader.tsx';

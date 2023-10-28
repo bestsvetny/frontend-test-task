@@ -1,4 +1,4 @@
-import { Dropdown } from 'src/shared/ui/components/dropdown.tsx';
+import { Dropdown } from 'src/shared/ui';
 import { userActiveToggled } from 'src/widgets/user-list/model/users-slice.ts';
 import { useAppDispatch } from 'src/app/appStore.ts';
 
