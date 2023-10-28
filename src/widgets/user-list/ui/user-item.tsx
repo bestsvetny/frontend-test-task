@@ -21,6 +21,7 @@ export const UserItem = React.memo(function UserItem({ user }: ContainerProps) {
                 ${mediaQueries.mobile} {
                     flex-direction: column;
                     min-height: 242px;
+                    gap: 16px;
                     height: 100%;
                     padding: 16px;
                 }
@@ -64,6 +65,7 @@ export const UserItem = React.memo(function UserItem({ user }: ContainerProps) {
                     position: relative;
                     padding-right: 24px;
                     ${mediaQueries.mobile} {
+                        min-height: 74px;
                         height: 100%;
                     }
                 `}
