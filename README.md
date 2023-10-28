@@ -1,5 +1,7 @@
 # Тестовое задание Frontend developer
 
+GitHub pages: https://bestsvetny.github.io/frontend-test-task/
+
 Инструменты:
 - React.js
 - Redux Toolkit
