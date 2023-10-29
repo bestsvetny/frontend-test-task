@@ -8,7 +8,7 @@ export const UserEditMenu = () => {
     const isDesktop = useMediaQuery(matchMediaQueries.desktop);
     return (
         <Card padding={isDesktop ? '40px' : '28px'}>
-            <Container gap='40px' column>
+            <Container gap={isDesktop ? '40px' : '24px'} column>
                 <Box
                     css={css`
                         display: block;
@@ -35,7 +35,7 @@ export const UserEditMenu = () => {
                         src={photo_lg}
                     />
                 </Box>
-                <Container column gap='24px' justifyContent='space-between' width='100%'>
+                <Container column gap={isDesktop ? '24px' : '20px'} justifyContent='space-between' width='100%'>
                     <Category href={'#'} text='Данные профиля' isActive />
                     <Category href={'#'} text='Рабочее пространство' />
                     <Category href={'#'} text='Приватность' />

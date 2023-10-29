@@ -2,13 +2,13 @@ import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
 import {
     ArrowLeftIcon,
-    Box,
     CaretLeftIcon,
     Colors,
     Container,
     Headline,
     TransitionTime,
-    matchMediaQueries
+    matchMediaQueries,
+    Text
 } from 'src/shared/ui';
 import { useMediaQuery } from 'src/shared/hooks';
 
@@ -41,25 +41,28 @@ export const UserEditNav = () => {
         );
     } else {
         return (
-            <Box
+            <Link
+                to={'/'}
                 css={css({
                     width: '100%',
-                    padding: '10px 10px 10px 8px'
+                    padding: '13px 10px 13px 8px',
+                    color: Colors.c_02
                 })}
             >
-                <Link
-                    to={'/'}
+                <Container
+                    gap='14px'
+                    alignItems='center'
                     css={css({
-                        width: '100%',
-                        color: Colors.c_02
+                        width: '100%'
                     })}
                 >
-                    <Container gap='8px' alignItems='center'>
-                        <CaretLeftIcon color='inherit' />
-                        <Headline color={Colors.c_02}>Назад</Headline>
-                    </Container>
-                </Link>
-            </Box>
+                    <CaretLeftIcon color='inherit' />
+
+                    <Text color={Colors.c_02} semibold>
+                        Назад
+                    </Text>
+                </Container>
+            </Link>
         );
     }
 };

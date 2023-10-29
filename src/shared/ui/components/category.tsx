@@ -44,7 +44,7 @@ export const Category = ({ href, text, isActive }: CategoryProps) => {
             >
                 {text}
             </Text>
-            <Divider mTop={isDesktop ? '12px' : '8px'} mBot='0' thin />
+            <Divider mTop={isDesktop ? '12px' : '8px'} mBot='0' />
         </Link>
     );
 };

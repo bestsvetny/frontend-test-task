@@ -23,6 +23,7 @@ export const Button = styled.button({
         }
     },
     [mediaQueries.mobile]: {
+        height: '44px',
         fontSize: '14px'
     }
 });

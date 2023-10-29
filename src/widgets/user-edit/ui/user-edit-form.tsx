@@ -10,7 +10,8 @@ import {
     Title,
     Loader,
     ErrorMessage,
-    mediaQueries
+    mediaQueries,
+    Container
 } from 'src/shared/ui';
 import { useMediaQuery } from 'src/shared/hooks';
 import { matchMediaQueries } from 'src/shared/ui/styles/media-queries.ts';
@@ -66,130 +67,132 @@ export const UserEditForm = () => {
     return (
         <>
             <Card padding={isDesktop ? '40px' : '28px'}>
-                <Title>Данные профиля</Title>
-                <Divider mTop={isDesktop ? '16px' : '16px'} mBot={isDesktop ? '24px' : '20px'} />
-                {isLoading && <Loader />}
-                {isError && <ErrorMessage message='Something went wrong' />}
-                {isSuccess && (
-                    <>
-                        <Box
-                            css={css`
-                                ${mediaQueries.desktop} {
-                                    max-width: 420px;
-                                }
-                            `}
-                        >
-                            <Form id='edit-form' onSubmit={handleSubmit(onSubmit)}>
-                                <FormItem label='Имя' labelFor='name'>
-                                    <Controller
-                                        name='name'
-                                        control={control}
-                                        rules={{ required: true }}
-                                        render={({ field }) => (
-                                            <TextInput
-                                                {...field}
-                                                id='name'
-                                                onClear={() => resetField('name', { defaultValue: '' })}
-                                                isValid={!formState.errors?.name}
-                                                aria-required='true'
-                                            />
-                                        )}
-                                    />
-                                </FormItem>
-                                <FormItem label='Никнейм' labelFor='username'>
-                                    <Controller
-                                        name='username'
-                                        control={control}
-                                        rules={{ required: true }}
-                                        render={({ field }) => (
-                                            <TextInput
-                                                {...field}
-                                                id='username'
-                                                onClear={() => resetField('username', { defaultValue: '' })}
-                                                isValid={!formState.errors?.username}
-                                                aria-required='true'
-                                            />
-                                        )}
-                                    />
-                                </FormItem>
-                                <FormItem label='Почта' labelFor='email'>
-                                    <Controller
-                                        name='email'
-                                        control={control}
-                                        rules={{ required: true }}
-                                        render={({ field }) => (
-                                            <TextInput
-                                                {...field}
-                                                id='email'
-                                                onClear={() => resetField('email', { defaultValue: '' })}
-                                                isValid={!formState.errors?.email}
-                                                aria-required='true'
-                                            />
-                                        )}
-                                    />
-                                </FormItem>
-                                <FormItem label='Город' labelFor='city'>
-                                    <Controller
-                                        name='city'
-                                        control={control}
-                                        rules={{ required: true }}
-                                        render={({ field }) => (
-                                            <TextInput
-                                                {...field}
-                                                id='city'
-                                                onClear={() => resetField('city', { defaultValue: '' })}
-                                                isValid={!formState.errors?.city}
-                                                aria-required='true'
-                                            />
-                                        )}
-                                    />
-                                </FormItem>
-                                <FormItem label='Телефон' labelFor='phone'>
-                                    <Controller
-                                        name='phone'
-                                        control={control}
-                                        rules={{ required: true }}
-                                        render={({ field }) => (
-                                            <TextInput
-                                                {...field}
-                                                id='phone'
-                                                onClear={() => resetField('phone', { defaultValue: '' })}
-                                                isValid={!formState.errors?.phone}
-                                                aria-required='true'
-                                            />
-                                        )}
-                                    />
-                                </FormItem>
-                                <FormItem label='Название компании' labelFor='company'>
-                                    <Controller
-                                        name='company'
-                                        control={control}
-                                        rules={{ required: true }}
-                                        render={({ field }) => (
-                                            <TextInput
-                                                {...field}
-                                                id='company'
-                                                onClear={() => resetField('company', { defaultValue: '' })}
-                                                isValid={!formState.errors?.company}
-                                                aria-required='true'
-                                            />
-                                        )}
-                                    />
-                                </FormItem>
-                            </Form>
-                        </Box>
+                <Container column>
+                    <Title>Данные профиля</Title>
+                    <Divider mTop={isDesktop ? '16px' : '16px'} mBot={isDesktop ? '24px' : '20px'} />
+                    {isLoading && <Loader />}
+                    {isError && <ErrorMessage message='Something went wrong' />}
+                    {isSuccess && (
+                        <>
+                            <Box
+                                css={css`
+                                    ${mediaQueries.desktop} {
+                                        max-width: 420px;
+                                    }
+                                `}
+                            >
+                                <Form id='edit-form' onSubmit={handleSubmit(onSubmit)}>
+                                    <FormItem label='Имя' labelFor='name'>
+                                        <Controller
+                                            name='name'
+                                            control={control}
+                                            rules={{ required: true }}
+                                            render={({ field }) => (
+                                                <TextInput
+                                                    {...field}
+                                                    id='name'
+                                                    onClear={() => resetField('name', { defaultValue: '' })}
+                                                    isValid={!formState.errors?.name}
+                                                    aria-required='true'
+                                                />
+                                            )}
+                                        />
+                                    </FormItem>
+                                    <FormItem label='Никнейм' labelFor='username'>
+                                        <Controller
+                                            name='username'
+                                            control={control}
+                                            rules={{ required: true }}
+                                            render={({ field }) => (
+                                                <TextInput
+                                                    {...field}
+                                                    id='username'
+                                                    onClear={() => resetField('username', { defaultValue: '' })}
+                                                    isValid={!formState.errors?.username}
+                                                    aria-required='true'
+                                                />
+                                            )}
+                                        />
+                                    </FormItem>
+                                    <FormItem label='Почта' labelFor='email'>
+                                        <Controller
+                                            name='email'
+                                            control={control}
+                                            rules={{ required: true }}
+                                            render={({ field }) => (
+                                                <TextInput
+                                                    {...field}
+                                                    id='email'
+                                                    onClear={() => resetField('email', { defaultValue: '' })}
+                                                    isValid={!formState.errors?.email}
+                                                    aria-required='true'
+                                                />
+                                            )}
+                                        />
+                                    </FormItem>
+                                    <FormItem label='Город' labelFor='city'>
+                                        <Controller
+                                            name='city'
+                                            control={control}
+                                            rules={{ required: true }}
+                                            render={({ field }) => (
+                                                <TextInput
+                                                    {...field}
+                                                    id='city'
+                                                    onClear={() => resetField('city', { defaultValue: '' })}
+                                                    isValid={!formState.errors?.city}
+                                                    aria-required='true'
+                                                />
+                                            )}
+                                        />
+                                    </FormItem>
+                                    <FormItem label='Телефон' labelFor='phone'>
+                                        <Controller
+                                            name='phone'
+                                            control={control}
+                                            rules={{ required: true }}
+                                            render={({ field }) => (
+                                                <TextInput
+                                                    {...field}
+                                                    id='phone'
+                                                    onClear={() => resetField('phone', { defaultValue: '' })}
+                                                    isValid={!formState.errors?.phone}
+                                                    aria-required='true'
+                                                />
+                                            )}
+                                        />
+                                    </FormItem>
+                                    <FormItem label='Название компании' labelFor='company'>
+                                        <Controller
+                                            name='company'
+                                            control={control}
+                                            rules={{ required: true }}
+                                            render={({ field }) => (
+                                                <TextInput
+                                                    {...field}
+                                                    id='company'
+                                                    onClear={() => resetField('company', { defaultValue: '' })}
+                                                    isValid={!formState.errors?.company}
+                                                    aria-required='true'
+                                                />
+                                            )}
+                                        />
+                                    </FormItem>
+                                </Form>
+                            </Box>
 
-                        <Box
-                            css={css`
-                                margin-top: 32px;
-                            `}
-                        >
-                            <Button type='submit' form='edit-form'>
-                                Сохранить
-                            </Button>
-                        </Box>
-                    </>
-                )}
+                            <Box
+                                css={css`
+                                    margin-top: ${isDesktop ? '32px' : '24px'};
+                                `}
+                            >
+                                <Button type='submit' form='edit-form'>
+                                    Сохранить
+                                </Button>
+                            </Box>
+                        </>
+                    )}
+                </Container>
             </Card>
             <Modal active={modalActive} setActive={setModalActiveCallback}>
                 <UserEditSuccessMessage />

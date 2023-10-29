@@ -1,14 +1,16 @@
-import { Container } from 'src/shared/ui';
+import { Container, matchMediaQueries } from 'src/shared/ui';
 import { css } from '@emotion/react';
 import { UserEdit } from 'src/widgets/user-edit';
 import { UserEditNav } from 'src/widgets/user-edit/ui/user-edit-nav.tsx';
 import { mediaQueries } from 'src/shared/ui/styles/media-queries.ts';
+import { useMediaQuery } from 'src/shared/hooks';
 
 export const UserEditPage = () => {
+    const isDesktop = useMediaQuery(matchMediaQueries.desktop);
     return (
         <Container
             column
-            gap='24px'
+            gap={isDesktop ? '24px' : '20px'}
             css={css({
                 width: '100%',
                 maxWidth: '1160px',

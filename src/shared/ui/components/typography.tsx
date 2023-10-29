@@ -22,7 +22,7 @@ export const Title = styled.h1({
 
 type HeadlineProps = BaseTextProps;
 
-export const Headline = styled.h2<HeadlineProps>((props) => ({
+export const Headline = styled.p<HeadlineProps>((props) => ({
     margin: 0,
     color: props.color ?? Colors.c_01,
     fontSize: '20px',
