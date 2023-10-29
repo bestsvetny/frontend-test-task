@@ -12,6 +12,7 @@ export const Button = styled.button({
     background: Colors.c_01,
     border: 'none',
     width: '100%',
+    height: '46px',
     transition: `all ${TransitionTime.color}`,
     [mediaQueries.desktop]: {
         maxWidth: '170px',

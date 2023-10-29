@@ -12,6 +12,8 @@ type ContainerProps = {
 };
 export const Container = styled.div<ContainerProps>((props) => ({
     display: 'flex',
+    width: props.width ? props.width : 'auto',
+    height: props.height ? props.height : 'auto',
     flexDirection: props.column ? 'column' : 'row',
     alignItems: props.alignItems || 'stretch',
     gap: props.gap || '0',

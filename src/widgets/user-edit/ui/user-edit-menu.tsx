@@ -13,6 +13,7 @@ export const UserEditMenu = () => {
                     css={css`
                         display: block;
                         width: 100%;
+                        max-height: 485px;
                         ${mediaQueries.mobile} {
                             height: 187px;
                         }
@@ -22,6 +23,7 @@ export const UserEditMenu = () => {
                         css={css`
                             display: block;
                             width: 100%;
+                            max-height: 485px;
                             border-radius: 8px;
                             object-fit: cover;
                             ${mediaQueries.mobile} {

@@ -35,17 +35,17 @@ const InputBase = styled.input({
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     onClear?: () => void;
-    isError?: boolean;
+    isValid?: boolean;
 }
 
 export const TextInput = forwardRef<HTMLInputElement, InputProps>(function TextInput(
-    { onClear, isError, ...props }: InputProps,
+    { onClear, isValid, ...props }: InputProps,
     ref
 ) {
     return (
         <InputWrapper
             css={css(
-                isError && {
+                !isValid && {
                     transition: 'all 0.2s',
                     border: `solid 1px ${Colors.c_error}`,
                     boxShadow: `0 0 5px ${Colors.c_error}`

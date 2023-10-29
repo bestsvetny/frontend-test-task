@@ -15,8 +15,8 @@ export const GlobalStyles = () => {
 
                     :root {
                         font-family: 'Manrope', sans-serif;
-                        line-height: 1.5;
                         font-weight: 400;
+                        line-height: normal;
                         background: ${Colors.c_05};
 
                         color-scheme: light dark;

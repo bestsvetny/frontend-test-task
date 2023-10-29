@@ -90,7 +90,7 @@ export const UserEditForm = () => {
                                                 {...field}
                                                 id='name'
                                                 onClear={() => resetField('name', { defaultValue: '' })}
-                                                isError={Boolean(formState.errors?.name)}
+                                                isValid={!formState.errors?.name}
                                                 aria-required='true'
                                             />
                                         )}
@@ -106,7 +106,7 @@ export const UserEditForm = () => {
                                                 {...field}
                                                 id='username'
                                                 onClear={() => resetField('username', { defaultValue: '' })}
-                                                isError={Boolean(formState.errors?.username)}
+                                                isValid={!formState.errors?.username}
                                                 aria-required='true'
                                             />
                                         )}
@@ -122,7 +122,7 @@ export const UserEditForm = () => {
                                                 {...field}
                                                 id='email'
                                                 onClear={() => resetField('email', { defaultValue: '' })}
-                                                isError={Boolean(formState.errors?.email)}
+                                                isValid={!formState.errors?.email}
                                                 aria-required='true'
                                             />
                                         )}
@@ -138,7 +138,7 @@ export const UserEditForm = () => {
                                                 {...field}
                                                 id='city'
                                                 onClear={() => resetField('city', { defaultValue: '' })}
-                                                isError={Boolean(formState.errors?.city)}
+                                                isValid={!formState.errors?.city}
                                                 aria-required='true'
                                             />
                                         )}
@@ -154,7 +154,7 @@ export const UserEditForm = () => {
                                                 {...field}
                                                 id='phone'
                                                 onClear={() => resetField('phone', { defaultValue: '' })}
-                                                isError={Boolean(formState.errors?.phone)}
+                                                isValid={!formState.errors?.phone}
                                                 aria-required='true'
                                             />
                                         )}
@@ -170,7 +170,7 @@ export const UserEditForm = () => {
                                                 {...field}
                                                 id='company'
                                                 onClear={() => resetField('company', { defaultValue: '' })}
-                                                isError={Boolean(formState.errors?.company)}
+                                                isValid={!formState.errors?.company}
                                                 aria-required='true'
                                             />
                                         )}

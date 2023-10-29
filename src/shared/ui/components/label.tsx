@@ -6,6 +6,7 @@ export const Label = styled.label({
     color: Colors.c_01,
     fontWeight: '600',
     [mediaQueries.desktop]: {
+        lineHeight: '25px',
         fontSize: '18px'
     },
     [mediaQueries.mobile]: {
