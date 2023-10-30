@@ -1,21 +1,21 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from 'src/widgets/header';
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 export const AppLayout = () => {
     return (
         <>
             <Header />
-            <main
-                css={css`
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 0 20px;
-                `}
-            >
+            <StyledMain>
                 <Outlet />
-            </main>
+            </StyledMain>
         </>
     );
 };
+
+const StyledMain = styled.main({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '0 20px'
+});

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { Box, Colors, CrossIcon, IconButton, ZIndex } from 'src/shared/ui';
+import { Colors, CrossIcon, IconButton, ZIndex } from 'src/shared/ui';
 import { css, Global } from '@emotion/react';
 import { mediaQueries } from 'src/shared/ui/styles/media-queries.ts';
+import styled from '@emotion/styled';
 
 interface ModalProps {
     children: React.ReactNode;
@@ -26,50 +27,20 @@ export const Modal = ({ children, setActive, active }: ModalProps) => {
                     }
                 `}
             />
-            <Box
-                css={css`
-                    display: ${active ? 'flex' : 'none'};
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    width: 100vw;
-                    height: 100vh;
-                    background-color: rgba(22, 22, 22, 0.24);
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    z-index: ${ZIndex.popupBackground};
-                `}
+            <ModalBackground
+                active={active}
                 onClick={() => {
                     setActive(false);
                 }}
             >
-                <Box
-                    css={css`
-                        position: relative;
-                        border-radius: 16px;
-                        background: ${Colors.c_06};
-                        padding: 40px;
-                        width: 310px;
-                        height: 211px;
-                        z-index: ${ZIndex.popup};
-                        ${mediaQueries.mobile} {
-                            width: 271px;
-                            height: 189px;
-                            padding: 32px;
-                        }
-                    `}
+                <ModalContainer
                     onClick={(e) => {
                         e.stopPropagation();
                     }}
                 >
                     {children}
                     <IconButton
-                        css={css`
-                            position: absolute;
-                            top: 18px;
-                            right: 18px;
-                        `}
+                        css={iconButtonStyles}
                         large
                         onClick={() => {
                             setActive(false);
@@ -77,8 +48,43 @@ export const Modal = ({ children, setActive, active }: ModalProps) => {
                     >
                         <CrossIcon large />
                     </IconButton>
-                </Box>
-            </Box>
+                </ModalContainer>
+            </ModalBackground>
         </>
     );
 };
+
+const ModalBackground = styled.div((props: { active: boolean }) => ({
+    display: props.active ? 'flex' : 'none',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'rgba(22, 22, 22, 0.24)',
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    zIndex: ZIndex.popupBackground
+}));
+
+const ModalContainer = styled.div({
+    position: 'relative',
+    borderRadius: '16px',
+    background: Colors.c_06,
+    padding: '40px',
+    width: '310px',
+    height: '211px',
+    zIndex: ZIndex.popup,
+    [mediaQueries.mobile]: {
+        width: '271px',
+        height: '189px',
+        padding: '32px'
+    }
+});
+
+const iconButtonStyles = css({
+    position: 'absolute',
+    top: '18px',
+    right: '18px'
+});

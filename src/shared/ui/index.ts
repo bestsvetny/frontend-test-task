@@ -13,7 +13,7 @@ export { Category } from './components/category.tsx';
 export { Modal } from './components/modal.tsx';
 export { Loader } from './components/loader.tsx';
 export { ErrorMessage } from 'src/shared/ui/components/errorMessage.tsx';
-export { Form } from './components/form.tsx';
+export { Form, FormItem } from './components/form.tsx';
 
 export { GlobalStyles } from './styles/global.tsx';
 export { Colors } from './styles/colors.ts';

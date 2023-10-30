@@ -1,13 +1,9 @@
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 export const Loader = () => {
-    return (
-        <div
-            css={css`
-                margin: 20px auto;
-            `}
-        >
-            ...Loading
-        </div>
-    );
+    return <StyledLoader>...Loading</StyledLoader>;
 };
+
+const StyledLoader = styled.div({
+    margin: '20px auto'
+});

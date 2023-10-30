@@ -17,47 +17,18 @@ export const UserEditNav = () => {
 
     if (isDesktop) {
         return (
-            <Container
-                css={css({
-                    padding: '20px 0 20px 0'
-                })}
-            >
-                <Link
-                    to={'/'}
-                    css={css({
-                        color: Colors.c_02,
-                        transition: `color ${TransitionTime.color}`,
-                        ':hover': {
-                            color: Colors.c_accent
-                        }
-                    })}
-                >
-                    <Container gap='8px' alignItems='center'>
-                        <ArrowLeftIcon color='inherit' />
-                        <Headline color='inherit'>Назад</Headline>
-                    </Container>
-                </Link>
-            </Container>
+            <Link to={'/'} css={desktopLinkStyles}>
+                <Container gap='8px' alignItems='center'>
+                    <ArrowLeftIcon color='inherit' />
+                    <Headline color='inherit'>Назад</Headline>
+                </Container>
+            </Link>
         );
     } else {
         return (
-            <Link
-                to={'/'}
-                css={css({
-                    width: '100%',
-                    padding: '13px 10px 13px 8px',
-                    color: Colors.c_02
-                })}
-            >
-                <Container
-                    gap='14px'
-                    alignItems='center'
-                    css={css({
-                        width: '100%'
-                    })}
-                >
+            <Link to={'/'} css={mobileLinkStyles}>
+                <Container gap='14px' alignItems='center' width='100%'>
                     <CaretLeftIcon color='inherit' />
-
                     <Text color={Colors.c_02} semibold>
                         Назад
                     </Text>
@@ -66,3 +37,18 @@ export const UserEditNav = () => {
         );
     }
 };
+
+const desktopLinkStyles = css({
+    padding: '20px 0 20px 0',
+    color: Colors.c_02,
+    transition: `color ${TransitionTime.color}`,
+    ':hover': {
+        color: Colors.c_accent
+    }
+});
+
+const mobileLinkStyles = css({
+    padding: '13px 10px 13px 8px',
+    color: Colors.c_02,
+    width: '100%'
+});

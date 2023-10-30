@@ -1,21 +1,7 @@
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-interface AvatarProps {
-    small?: boolean;
-    src: string;
-    alt: string;
-}
-
-export const Avatar = ({ small, src, alt }: AvatarProps) => {
-    return (
-        <img
-            css={css`
-                display: block;
-                width: ${small ? '20px' : '28px'};
-                border-radius: 50%;
-            `}
-            alt={alt}
-            src={src}
-        />
-    );
-};
+export const Avatar = styled.img((props: { small?: boolean }) => ({
+    display: 'block',
+    width: props.small ? '20px' : '28px',
+    borderRadius: '50%'
+}));

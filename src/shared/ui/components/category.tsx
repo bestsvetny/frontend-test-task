@@ -9,19 +9,13 @@ interface CategoryProps {
     text: string;
     isActive?: boolean;
 }
+
 export const Category = ({ href, text, isActive }: CategoryProps) => {
     const isDesktop = useMediaQuery(matchMediaQueries.desktop);
     if (isActive) {
         return (
             <Box>
-                <Text
-                    small
-                    css={css({
-                        cursor: 'default',
-                        transition: `color ${TransitionTime.color}`,
-                        color: Colors.c_01
-                    })}
-                >
+                <Text small css={css(activeTextStyles)}>
                     {text}
                 </Text>
                 <Divider mTop={isDesktop ? '12px' : '8px'} mBot='0' />
@@ -30,21 +24,26 @@ export const Category = ({ href, text, isActive }: CategoryProps) => {
     }
     return (
         <Link to={href}>
-            <Text
-                small
-                css={css({
-                    transition: `color ${TransitionTime.color}`,
-                    color: Colors.c_03,
-                    [mediaQueries.desktop]: {
-                        ':hover': {
-                            color: Colors.c_accent
-                        }
-                    }
-                })}
-            >
+            <Text small css={inActiveTextStyles}>
                 {text}
             </Text>
             <Divider mTop={isDesktop ? '12px' : '8px'} mBot='0' />
         </Link>
     );
 };
+
+const activeTextStyles = css({
+    cursor: 'default',
+    transition: `color ${TransitionTime.color}`,
+    color: Colors.c_01
+});
+
+const inActiveTextStyles = css({
+    transition: `color ${TransitionTime.color}`,
+    color: Colors.c_03,
+    [mediaQueries.desktop]: {
+        ':hover': {
+            color: Colors.c_accent
+        }
+    }
+});

@@ -20,9 +20,7 @@ export const Title = styled.h1({
     fontWeight: '600'
 });
 
-type HeadlineProps = BaseTextProps;
-
-export const Headline = styled.p<HeadlineProps>((props) => ({
+export const Headline = styled.p<BaseTextProps>((props) => ({
     margin: 0,
     color: props.color ?? Colors.c_01,
     fontSize: '20px',
@@ -49,9 +47,7 @@ export const Text = styled.p<TextProps>((props) => ({
     }
 }));
 
-type CaptionTextProps = BaseTextProps;
-
-export const CaptionText = styled.p<CaptionTextProps>((props) => ({
+export const CaptionText = styled.p<BaseTextProps>((props) => ({
     margin: 0,
     color: props.color ?? Colors.c_01,
     fontSize: '14px',

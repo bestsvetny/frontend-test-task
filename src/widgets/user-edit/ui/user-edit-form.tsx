@@ -1,10 +1,10 @@
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import {
-    Box,
     Button,
     Card,
     Divider,
     Form,
+    FormItem,
     TextInput,
     Modal,
     Title,
@@ -15,13 +15,12 @@ import {
 } from 'src/shared/ui';
 import { useMediaQuery } from 'src/shared/hooks';
 import { matchMediaQueries } from 'src/shared/ui/styles/media-queries.ts';
-import { css } from '@emotion/react';
-import { FormItem } from 'src/shared/ui/components/form.tsx';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { UserEditSuccessMessage } from './user-edit-success-message.tsx';
 import { IFormInput } from '../types/types.tsx';
 import { useGetUser } from 'src/widgets/user-edit/api/queries.ts';
+import styled from '@emotion/styled';
 
 export const UserEditForm = () => {
     const isDesktop = useMediaQuery(matchMediaQueries.desktop);
@@ -74,13 +73,7 @@ export const UserEditForm = () => {
                     {isError && <ErrorMessage message='Something went wrong' />}
                     {isSuccess && (
                         <>
-                            <Box
-                                css={css`
-                                    ${mediaQueries.desktop} {
-                                        max-width: 420px;
-                                    }
-                                `}
-                            >
+                            <FormWrapper>
                                 <Form id='edit-form' onSubmit={handleSubmit(onSubmit)}>
                                     <FormItem label='Имя' labelFor='name'>
                                         <Controller
@@ -179,17 +172,13 @@ export const UserEditForm = () => {
                                         />
                                     </FormItem>
                                 </Form>
-                            </Box>
+                            </FormWrapper>
 
-                            <Box
-                                css={css`
-                                    margin-top: ${isDesktop ? '32px' : '24px'};
-                                `}
-                            >
+                            <ButtonWrapper>
                                 <Button type='submit' form='edit-form'>
                                     Сохранить
                                 </Button>
-                            </Box>
+                            </ButtonWrapper>
                         </>
                     )}
                 </Container>
@@ -200,3 +189,16 @@ export const UserEditForm = () => {
         </>
     );
 };
+
+const FormWrapper = styled.div({
+    [mediaQueries.desktop]: {
+        maxWidth: '420px'
+    }
+});
+
+const ButtonWrapper = styled.div({
+    marginTop: '32px',
+    [mediaQueries.mobile]: {
+        marginTop: '24px'
+    }
+});

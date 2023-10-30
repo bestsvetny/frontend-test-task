@@ -1,17 +1,9 @@
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-interface ErrorProps {
-    message: string;
-}
-
-export const ErrorMessage = ({ message }: ErrorProps) => {
-    return (
-        <div
-            css={css`
-                margin: 20px auto;
-            `}
-        >
-            {message}
-        </div>
-    );
+export const ErrorMessage = ({ message }: { message: string }) => {
+    return <StyledErrorMessage>{message}</StyledErrorMessage>;
 };
+
+const StyledErrorMessage = styled.div({
+    margin: '20px auto'
+});

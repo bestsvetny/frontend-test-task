@@ -8,16 +8,20 @@ type ContainerProps = {
     gap?: string;
     height?: string;
     width?: string;
+    maxWidth?: string;
     justifyContent?: 'center' | 'start' | 'space-between' | 'space-around' | 'space-evenly';
+    padding?: string;
 };
 export const Container = styled.div<ContainerProps>((props) => ({
     display: 'flex',
     width: props.width ? props.width : 'auto',
+    maxWidth: props.maxWidth ?? 'none',
     height: props.height ? props.height : 'auto',
     flexDirection: props.column ? 'column' : 'row',
     alignItems: props.alignItems || 'stretch',
     gap: props.gap || '0',
-    justifyContent: props.justifyContent || 'start'
+    justifyContent: props.justifyContent || 'start',
+    padding: props.padding || ''
 }));
 
 type GridProps = {
