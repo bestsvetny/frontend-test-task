@@ -45,7 +45,6 @@ const UserCard = styled.div({
         flexDirection: 'column',
         minHeight: '242px',
         gap: '16px',
-        height: '100%',
         padding: '16px'
     }
 });

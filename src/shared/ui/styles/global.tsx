@@ -19,8 +19,6 @@ export const GlobalStyles = () => {
                         line-height: normal;
                         background: ${Colors.c_05};
 
-                        color-scheme: light dark;
-
                         font-synthesis: none;
                         text-rendering: optimizeLegibility;
                     }

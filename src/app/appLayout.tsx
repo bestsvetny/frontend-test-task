@@ -17,6 +17,6 @@ const StyledMain = styled.main({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    minWidth: '420px',
+    minWidth: '380px',
     padding: '0 20px'
 });
