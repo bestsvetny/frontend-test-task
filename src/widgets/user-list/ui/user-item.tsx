@@ -98,6 +98,9 @@ const companyTextStyles = css({
         overflow: 'hidden',
         textOverflow: 'ellipsis',
         maxWidth: '156px'
+    },
+    [mediaQueries.mobile]: {
+        wordBreak: 'break-word'
     }
 });
 

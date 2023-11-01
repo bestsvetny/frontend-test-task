@@ -20,6 +20,7 @@ const StyledHeader = styled.header({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    minWidth: '420px',
     background: Colors.c_06,
     padding: '16px 10px',
     [mediaQueries.mobile]: {

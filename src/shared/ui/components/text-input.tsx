@@ -15,7 +15,16 @@ export const TextInput = forwardRef<HTMLInputElement, InputProps>(function TextI
 ) {
     return (
         <InputWrapper valid={isValid}>
-            <InputBase ref={ref} {...props} type='text' />
+            <InputBase
+                ref={ref}
+                {...props}
+                type='text'
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                    }
+                }}
+            />
             {onClear && props.value && (
                 <IconButton color={Colors.c_02} onClick={onClear}>
                     <CrossIcon />
@@ -50,14 +59,13 @@ const InputWrapper = styled.div((props: { valid?: boolean }) => {
 const InputBase = styled.input({
     outline: 'none',
     color: Colors.c_01,
+    background: 'none',
     border: 'none',
     width: '100%',
+    fontSize: '16px',
     fontWeight: '500',
     '::placeholder': {
         color: Colors.c_02
-    },
-    [mediaQueries.desktop]: {
-        fontSize: '16px'
     },
     [mediaQueries.mobile]: {
         fontSize: '14px'

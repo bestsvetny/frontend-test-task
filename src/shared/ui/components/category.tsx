@@ -15,7 +15,7 @@ export const Category = ({ href, text, isActive }: CategoryProps) => {
     if (isActive) {
         return (
             <Box>
-                <Text small css={css(activeTextStyles)}>
+                <Text small css={activeTextStyles}>
                     {text}
                 </Text>
                 <Divider mTop={isDesktop ? '12px' : '8px'} mBot='0' />

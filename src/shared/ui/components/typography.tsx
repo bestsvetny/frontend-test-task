@@ -14,11 +14,12 @@ type BaseTextProps = {
         | string;
 };
 
-export const Title = styled.h1({
+export const Title = styled.h1((props) => ({
+    color: props.color ?? Colors.c_01,
     margin: 0,
     fontSize: '24px',
     fontWeight: '600'
-});
+}));
 
 export const Headline = styled.p<BaseTextProps>((props) => ({
     margin: 0,
